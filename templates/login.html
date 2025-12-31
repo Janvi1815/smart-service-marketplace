@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Smart Service Marketplace</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+</head>
+<body>
+
+<div class="container">
+  <h2>Welcome Back</h2>
+  <p>Login to continue</p>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST">
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="example@gmail.com" required>
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required>
+    </div>
+
+    <a href="#" class="forgot">Forgot password?</a>
+
+    <button class="btn">Login</button>
+  </form>
+
+  <p class="switch">
+      Don’t have an account? 
+      <a href="{{ url_for('register') }}">Register</a>
+  </p>
+</div>
+
+</body>
+</html>

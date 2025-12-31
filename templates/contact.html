@@ -1,0 +1,339 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<style>
+/* ===== CONTACT SECTION ===== */
+.contact-section{
+    padding:80px 8%;
+    margin-top:10%;
+    background:linear-gradient(135deg,#fdfefe,#f1f5ff);
+}
+
+/* ===== MAIN BOX ===== */
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:50px;
+    background:#ffffff;
+    padding:50px;
+    border-radius:22px;
+    box-shadow:0 25px 50px rgba(148,163,184,0.25);
+    transition:all 0.35s ease;
+}
+
+.contact-wrapper:hover{
+    transform:translateY(-6px);
+    box-shadow:0 35px 70px rgba(148,163,184,0.35);
+}
+
+/* ===== FORM ===== */
+.contact-form h2{
+    margin-bottom:28px;
+    font-size:28px;
+    font-weight:700;
+    color:#475569;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px 16px;
+    margin-bottom:20px;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    font-size:15px;
+    background:#f8fafc;
+    transition:all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color:#94a3b8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#93c5fd;
+    background:#ffffff;
+    box-shadow:0 0 0 4px rgba(147,197,253,0.35);
+}
+
+.contact-form textarea{
+    resize:none;
+    height:150px;
+}
+
+/* ===== BUTTON ===== */
+.contact-form button{
+    background:linear-gradient(135deg,#93c5fd,#bfdbfe);
+    color:#1e3a8a;
+    border:none;
+    padding:15px 40px;
+    border-radius:14px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.3s ease;
+}
+
+.contact-form button:hover{
+    background:linear-gradient(135deg,#bfdbfe,#93c5fd);
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(147,197,253,0.6);
+}
+
+/* ===== DETAILS ===== */
+.contact-details{
+    background:linear-gradient(180deg,#f8fafc,#eef2ff);
+    padding:35px;
+    border-radius:18px;
+}
+
+.contact-details h3{
+    margin-bottom:22px;
+    font-size:23px;
+    font-weight:700;
+    color:#475569;
+}
+
+.detail-box{
+    margin-bottom:20px;
+    padding:12px 15px;
+    border-radius:12px;
+    background:#ffffff;
+    box-shadow:0 10px 20px rgba(203,213,225,0.4);
+    color:#64748b;
+    line-height:1.7;
+    font-size:15px;
+}
+
+<style>
+/* ===== CONTACT SECTION ===== */
+.contact-section{
+    padding:90px 8%;
+    margin-top:8%;
+    background:linear-gradient(135deg,#fefefe,#e6f0ff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== MAIN BOX ===== */
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:55px;
+    background:#ffffff;
+    padding:50px 55px;
+    border-radius:25px;
+    box-shadow:0 30px 60px rgba(148,163,184,0.2);
+    transition:all 0.4s ease;
+}
+
+.contact-wrapper:hover{
+    transform:translateY(-5px);
+    box-shadow:0 40px 80px rgba(148,163,184,0.25);
+}
+
+/* ===== FORM ===== */
+.contact-form h2{
+    margin-bottom:30px;
+    font-size:30px;
+    font-weight:700;
+    color:#334155;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px 18px;
+    margin-bottom:22px;
+    border:1px solid #d1d5db;
+    border-radius:18px;
+    font-size:16px;
+    background:#f9fafc;
+    transition:all 0.35s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color:#94a3b8;
+    font-style:italic;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#60a5fa;
+    background:#ffffff;
+    box-shadow:0 0 0 5px rgba(96,165,250,0.2);
+}
+
+.contact-form textarea{
+    resize:none;
+    height:160px;
+}
+
+/* ===== BUTTON ===== */
+.contact-form button{
+    background:linear-gradient(135deg,#60a5fa,#93c5fd);
+    color:#1e3a8a;
+    border:none;
+    padding:16px 45px;
+    border-radius:20px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.35s ease;
+}
+
+.contact-form button:hover{
+    background:linear-gradient(135deg,#93c5fd,#60a5fa);
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(96,165,250,0.5);
+}
+
+/* ===== DETAILS BOX ===== */
+.contact-details{
+    background:linear-gradient(180deg,#f8fafc,#e0ebff);
+    padding:40px 35px;
+    border-radius:20px;
+}
+
+.contact-details h3{
+    margin-bottom:25px;
+    font-size:25px;
+    font-weight:700;
+    color:#334155;
+}
+
+.detail-box{
+    margin-bottom:22px;
+    padding:14px 16px;
+    border-radius:15px;
+    background:#ffffff;
+    box-shadow:0 12px 25px rgba(203,213,225,0.35);
+    color:#475569;
+    line-height:1.8;
+    font-size:15px;
+    transition:all 0.3s ease;
+}
+
+.detail-box:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 35px rgba(203,213,225,0.45);
+}
+
+.detail-box span{
+    display:block;
+    font-weight:600;
+    color:#1e293b;
+    margin-bottom:5px;
+}
+
+/* ===== GOOGLE MAP ===== */
+.map-box{
+    margin-top:60px;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(148,163,184,0.25);
+}
+
+.map-box iframe{
+    width:100%;
+    height:400px;
+    border:none;
+    border-radius:22px;
+    transition:all 0.3s ease;
+}
+
+.map-box iframe:hover{
+    transform:scale(1.01);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+    .contact-wrapper{
+        grid-template-columns:1fr;
+        padding:40px;
+    }
+
+    .contact-form h2{
+        font-size:26px;
+    }
+
+    .contact-details{
+        padding:30px;
+    }
+
+    .map-box iframe{
+        height:350px;
+    }
+}
+
+@media(max-width:600px){
+    .contact-section{
+        padding:60px 5%;
+    }
+
+    .contact-form button{
+        width:100%;
+    }
+}
+</style>
+
+
+<!-- ===== CONTACT CONTENT ===== -->
+<section class="contact-section">
+
+    <div class="contact-wrapper">
+
+        <!-- LEFT: CONTACT FORM -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="contact-details">
+            <h3>Contact Information</h3>
+
+            <div class="detail-box">
+                <span>Email:</span> yourmail@example.com
+            </div>
+
+            <div class="detail-box">
+                <span>Phone:</span> +91 98765 43210
+            </div>
+
+            <div class="detail-box">
+                <span>Address:</span> Bharuch, Gujarat, India
+            </div>
+
+            <div class="detail-box">
+                <span>Working Hours:</span> Mon – Sat (9AM – 6PM)
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== GOOGLE MAP ===== -->
+    <div class="map-box">
+        <iframe 
+            src="https://www.google.com/maps?q=Bharuch,Gujarat&output=embed">
+        </iframe>
+    </div>
+
+</section>
+
+
+
+
+{% endblock %}

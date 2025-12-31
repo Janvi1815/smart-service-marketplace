@@ -1,0 +1,21 @@
+<nav class="top-navbar">
+  <div class="logo">
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='log.png') }}" alt="Smart Service Marketplace Logo">
+    </a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('services') }}">Services</a></li>
+    <li><a href="{{ url_for('about') }}">About</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+  </ul>
+
+  <div class="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>

@@ -1,0 +1,268 @@
+/* -------------------------------------------
+   GLOBAL THEME COLORS (MODERN PROFESSIONAL)
+------------------------------------------- */
+:root {
+    --primary: #12c9b6;
+    --primary-light: #1fe3d0;
+    --navy: #0c1a27;
+    --bg: #eef3ff;
+    --white: #ffffff;
+    --glass: rgba(255,255,255,0.15);
+    --shadow: 0 8px 25px rgba(0,0,0,0.15);
+    --radius: 14px;
+}
+
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: #263849;
+}
+
+
+/* -------------------------------------------
+   SUPER-PRO NAVBAR (FIXED + SLIMMER)
+------------------------------------------- */
+.top-navbar {
+    width: 100%;
+    padding: 10px 40px; /* Smaller, modern */
+    background: linear-gradient(90deg, var(--navy), var(--primary));
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+}
+
+/* Logo size fixed */
+.logo img {
+    height: 65px;   
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Animated underline */
+.nav-links li a::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: var(--primary-light);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-light);
+    text-shadow: 0 0 8px rgba(18,201,182,0.8);
+}
+
+
+/* -------------------------------------------
+   LOGIN + REGISTER FORM (PERFECT SIZE)
+------------------------------------------- */
+.container {
+    width: 400px;
+    margin: 140px auto;
+    background: var(--glass);
+    backdrop-filter: blur(18px);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease;
+}
+
+.container:hover {
+    box-shadow: 0 15px 45px rgba(0,0,0,0.28);
+}
+
+h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+/* Input groups */
+.input-group {
+    margin: 18px 0;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.75);
+    transition: 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 12px rgba(23,192,174,0.4);
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    border: none;
+    border-radius: var(--radius);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Switch / Forgot */
+.switch, 
+.forgot {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: var(--navy);
+    font-weight: 500;
+}
+
+.switch:hover, 
+.forgot:hover {
+    color: var(--primary);
+}
+
+
+/* Flash messages */
+.flash.success {
+    background: #d4f7e8;
+    color: #0e6b4b;
+    padding: 12px;
+    border-radius: var(--radius);
+}
+
+.flash.danger {
+    background: #ffd6d6;
+    color: #7a0505;
+    padding: 12px;
+    border-radius: var(--radius);
+}
+
+
+/* -------------------------------------------
+   SIDEBAR (SMALLER + MODERN + PRO)
+------------------------------------------- */
+.sidebar {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    background: var(--navy);
+    padding-top: 20px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.15);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #dfe9f6;
+    font-size: 16px;
+    padding: 13px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s ease;
+}
+
+.sidebar ul li a::before {
+    content: "⚡";
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateX(6px);
+    border-radius: var(--radius);
+}
+
+.sidebar ul li.active a {
+    background: var(--primary);
+    border-left: 6px solid #fff;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+
+/* -------------------------------------------
+   CARDS (CLEAN + SOFT SHADOW)
+------------------------------------------- */
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    margin: 25px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+}
+
+
+/* -------------------------------------------
+   ANIMATION
+------------------------------------------- */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

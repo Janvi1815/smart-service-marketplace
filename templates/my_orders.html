@@ -1,0 +1,9 @@
+{% for service in cart_items %}
+  <div class="order-item">
+    <h4>{{ service.name }}</h4>
+    <p>{{ service.description }}</p>
+    <p>Category: {{ service.category }}</p>
+  </div>
+{% else %}
+  <p>No orders yet.</p>
+{% endfor %}

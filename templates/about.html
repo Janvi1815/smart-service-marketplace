@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<style>
+/* ================= GLOBAL ================= */
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(34,197,94,0.08), transparent 40%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+}
+
+/* ================= MAIN LAYOUT ================= */
+.about-wrapper{
+    width: 100%;
+    padding: 100px 8%;
+    animation: fadeInUp 1.1s ease;
+}
+
+/* ================= HEADING ================= */
+.about-wrapper h1{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+    background: linear-gradient(90deg, #2563eb, #22c55e);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+    margin-top: 10%;
+    position: relative;
+}
+
+.about-wrapper h1::after{
+    content: "";
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(to right, #2563eb, #22c55e);
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 20px;
+}
+
+/* ================= PARAGRAPHS ================= */
+.about-wrapper p{
+    max-width: 920px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 2;
+    color: #475569;
+    text-align: center;
+}
+
+/* ================= HERO IMAGE ================= */
+.hero-img{
+    margin: 100px 0;
+    position: relative;
+}
+
+.hero-img::before{
+    content:"";
+    position:absolute;
+    inset:-20px;
+    background: linear-gradient(120deg, #2563eb, #22c55e);
+    border-radius: 45px;
+    filter: blur(45px);
+    opacity: 0.35;
+    z-index:-1;
+}
+
+.hero-img img{
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 55px 110px rgba(0,0,0,0.28);
+    transition: transform 0.8s ease;
+}
+
+.hero-img img:hover{
+    transform: scale(1.04);
+}
+
+/* ================= CARDS ================= */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 45px;
+    margin-top: 120px;
+}
+
+.card{
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 28px 65px rgba(0,0,0,0.12);
+    transition: all 0.55s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(140deg, transparent, rgba(37,99,235,0.18), transparent);
+    opacity:0;
+    transition:0.5s;
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card:hover{
+    transform: translateY(-18px);
+    box-shadow: 0 55px 120px rgba(37,99,235,0.35);
+}
+
+.card h3{
+    font-size: 28px;
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+.card p{
+    font-size: 17px;
+    color: #334155;
+    text-align: left;
+}
+
+/* ================= SPLIT SECTIONS ================= */
+.split{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    margin-top: 160px;
+    align-items: center;
+}
+
+.split img{
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 34px;
+    box-shadow: 0 45px 95px rgba(0,0,0,0.35);
+    transition: transform 0.7s ease;
+}
+
+.split img:hover{
+    transform: scale(1.06);
+}
+
+.split h2{
+    font-size: 40px;
+    font-weight: 900;
+    background: linear-gradient(to right, #22c55e, #2563eb);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 24px;
+}
+
+.split p{
+    text-align: left;
+}
+
+/* ================= TIMELINE ================= */
+.timeline{
+    margin-top: 180px;
+}
+
+.timeline h2{
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    color: #2563eb;
+    margin-bottom: 70px;
+}
+
+.step{
+    max-width: 920px;
+    margin: 0 auto 32px;
+    background: #ffffff;
+    padding: 38px 48px;
+    border-radius: 28px;
+    font-size: 17px;
+    color: #334155;
+    border-left: 8px solid #22c55e;
+    box-shadow: 0 28px 60px rgba(0,0,0,0.15);
+    transition: transform 0.45s ease;
+    position: relative;
+}
+
+.step::before{
+    content: "✓";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #22c55e;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.step:hover{
+    transform: translateX(16px);
+}
+
+/* ================= CTA ================= */
+.cta{
+    margin-top: 190px;
+    padding: 95px 10%;
+    border-radius: 42px;
+    background:
+        radial-gradient(circle at top left, rgba(96,165,250,0.45), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(74,222,128,0.45), transparent 40%),
+        linear-gradient(135deg, #2563eb, #22c55e);
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 70px 150px rgba(0,0,0,0.45);
+}
+
+.cta h2{
+    font-size: 44px;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.cta p{
+    font-size: 19px;
+    font-weight: 500;
+    opacity: 0.96;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(45px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .split{
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .hero-img img{
+        height: 300px;
+    }
+
+    .about-wrapper{
+        padding: 80px 6%;
+    }
+
+    .about-wrapper h1{
+        font-size: 36px;
+    }
+}
+</style>
+
+<div class="about-wrapper">
+
+    <h1>About Our Platform</h1>
+
+    <p>
+        We build modern, clean, and user-friendly web applications with a strong
+        focus on simplicity, clarity, and performance. This platform is specially
+        designed for students, beginners, and developers who want practical
+        real-world experience.
+    </p>
+
+    <p>
+        Every project on this platform is developed using modern tools and
+        industry-relevant practices to ensure reliability and scalability.
+    </p>
+
+    <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="">
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Our Mission</h3>
+            <p>
+                To make web development simple, structured, and effective
+                through real-world projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>What We Create</h3>
+            <p>
+                Responsive websites, Flask applications, dashboards,
+                and student-focused web solutions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Why Choose Us</h3>
+            <p>
+                Clean UI, practical learning approach,
+                and performance-oriented development.
+            </p>
+        </div>
+    </div>
+
+    <div class="split">
+        <div>
+            <h2>Our Journey</h2>
+            <p>
+                Our journey started with simple Python and Flask projects and
+                gradually evolved into full-scale web applications.
+            </p>
+            <p>
+                Each step helped us understand real-world development challenges.
+            </p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984" alt="">
+    </div>
+
+    <div class="split">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
+        <div>
+            <h2>Our Vision</h2>
+            <p>
+                We aim to create a learning-driven platform where technology
+                meets creativity and innovation.
+            </p>
+            <p>
+                Our vision is to help learners build confidence and skills.
+            </p>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <h2>Our Growth Path</h2>
+        <div class="step">Started with beginner-friendly Python projects</div>
+        <div class="step">Built real-world Flask applications</div>
+        <div class="step">Focused on UI, performance, and scalability</div>
+        <div class="step">Continuously improving with modern web standards</div>
+    </div>
+
+    <div class="cta">
+        <h2>Let’s Build Something Great</h2>
+        <p>
+            Clean design, strong functionality, and real-world learning.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
